@@ -29,7 +29,6 @@ function startNewSearchFor(location, checkIn, checkOut){
 }
 
 function checkIfResultAreBookable(expectation){
-  var results = 
   cy.get('ul[class="list-page__content-list list-reset"]').children().each((element) => {
     cy.wrap(element).within(() => {
       if(element.hasClass('mb:24-rem property-card')){
@@ -54,10 +53,17 @@ function getRandomPastDay(){
   }
 }
 
+function checkForBasicAmenity(amenity){
+  cy.get('ul[aria-labelledby="basics"]').within(() => {
+    cy.get('li').contains(amenity).should('exist')
+  })
+}
+
 module.exports = {
     searchFor,
     startNewSearchFor,
     checkIfResultAreBookable,
-    getRandomPastDay
+    getRandomPastDay,
+    checkForBasicAmenity
 };
 
