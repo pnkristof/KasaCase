@@ -1,0 +1,22 @@
+{
+  "name": "kasacase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnkristof/KasaCase.git"
+  },
+  "author": "Kristof Paszti-Nagy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pnkristof/KasaCase/issues"
+  },
+  "homepage": "https://github.com/pnkristof/KasaCase#readme",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
+}
