@@ -16,6 +16,7 @@ function isFirstDayOfTheMonth(){
   }
   return true
 }
+
 module.exports = {
     getRandomPastDay,
     isFirstDayOfTheMonth

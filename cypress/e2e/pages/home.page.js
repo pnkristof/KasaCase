@@ -38,6 +38,7 @@ function checkPastDayAvailability(){
   if(utils.isFirstDayOfTheMonth()){  
     cy.get('button[aria-label="Move backward to switch to the previous month."]').click()
   }
+  
   var day = utils.getRandomPastDay()
 
   cy.get(datePickerMonths).first().within(() => {

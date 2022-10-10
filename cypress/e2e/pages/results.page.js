@@ -42,6 +42,7 @@ function isKasa(element){
   return element.hasClass('mb:24-rem property-card')
 }
 
+// TODO: would be nice to check details by index
 function viewFirstPropertyDetails(){
   cy.get(resultList, {timeout: 5000}).first().within(() => {
     cy.get(recommendedRoomType).within(() => {
