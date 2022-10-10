@@ -1,19 +1,21 @@
 /// <reference types="cypress" />
-const commonSteps = require("../steps/commonSteps")
+
+import searchData from '../../fixtures/example.json'
+
+const home = require("../pages/home.page")
+const results = require("../pages/results.page")
 
 context('Home page is visible', () => {
     beforeEach(() => {
-      cy.visit('https://kasa.com')
+      cy.visit(home.url)
     })
 
     it('User is not able to book Kasa for one night stay', () => {
-      commonSteps.searchFor("Austin, TX", "11/01/2022", "11/02/2022")
-      cy.wait(4500)
-      commonSteps.checkIfResultAreBookable(false)
-      commonSteps.startNewSearchFor("San Francisco, CA", "12/01/2022", "12/02/2022")
-      cy.wait(4500)
-      commonSteps.checkIfResultAreBookable(false)
-      commonSteps.startNewSearchFor("Seattle, WA", "01/01/2023", "01/02/2023")
-      commonSteps.checkIfResultAreBookable(false)
+      home.searchFor(searchData.bookingData[0].location, searchData.bookingData[0].checkIn, searchData.bookingData[0].checkOut)
+      results.checkIfAllBookable(false)
+      results.searchFor(searchData.bookingData[1].location, searchData.bookingData[1].checkIn, searchData.bookingData[1].checkOut)
+      results.checkIfAllBookable(false)
+      results.searchFor(searchData.bookingData[2].location, searchData.bookingData[2].checkIn, searchData.bookingData[2].checkOut)
+      results.checkIfAllBookable(false)
     })
 })

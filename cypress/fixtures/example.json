@@ -1,5 +1,18 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "bookingData": [
+  {
+  "location": "Austin, TX",
+  "checkIn": "11/01/2022",
+  "checkOut": "11/02/2022"
+  },
+  {
+  "location": "San Francisco, CA",
+  "checkIn": "12/01/2022",
+  "checkOut": "12/02/2022"
+  },
+  {
+    "location": "Seattle, WA",
+    "checkIn": "01/01/2023",
+    "checkOut": "01/02/2023"
+  }]
 }

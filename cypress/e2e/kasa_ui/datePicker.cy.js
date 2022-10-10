@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-const commonSteps = require("../steps/commonSteps")
+
+const home = require("../pages/home.page")
 
 context('Home page and date picker is visible', () => {
   beforeEach(() => {
@@ -8,10 +9,6 @@ context('Home page and date picker is visible', () => {
   })
 
   it('User is not able to choose past dates using the date picker', () => {
-    var day = commonSteps.getRandomPastDay()
-    
-    cy.get('div[class="asd__month"]').first().within(() => {
-      cy.get('button').contains(day).should('have.attr', 'disabled')
-    })
+    home.checkPastDayAvailability()
   })
 })
