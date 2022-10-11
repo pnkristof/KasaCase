@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const home = require("../pages/home.page")
+const home = require("../../pages/home.page")
 
 context('Home page and date picker is visible', () => {
   beforeEach(() => {

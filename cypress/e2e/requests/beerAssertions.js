@@ -36,11 +36,11 @@ function checkHopQuantity(beers, hopName, hopQuantity, unit){
   })
 }
 
-function checkFoodRecommendation(beers, food){
+function checkFoodRecommendation(beers, food, exactMatch){
   cy.log(`Checking ${beers.length} beers for "${food}" as food recommendation`)
 
   beers.forEach((beer) => {
-    if(!utils.arrayContainsString(beer.food_pairing, food)){
+    if(!utils.arrayContainsString(beer.food_pairing, food, exactMatch)){
       throw new Error(`Beer ${beer.name} (id ${beer.id}) does not contain ${food} as food recommendation`)
     }
   })

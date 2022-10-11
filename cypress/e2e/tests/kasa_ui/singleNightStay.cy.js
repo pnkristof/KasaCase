@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import searchData from '../../fixtures/example.json'
+import searchData from '../../../fixtures/example.json'
 
-const home = require("../pages/home.page")
-const results = require("../pages/results.page")
+const home = require("../../pages/home.page")
+const results = require("../../pages/results.page")
 
 context('Home page is visible', () => {
     beforeEach(() => {

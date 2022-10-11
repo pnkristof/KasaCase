@@ -1,4 +1,3 @@
-
 const utils = require("../utils")
 
 var url = "https://kasa.com/"
@@ -10,9 +9,8 @@ var searchWidget = '#search-widget'
   var submit = 'button[type="submit"]'
   var datePickerMonths = 'div[class="asd__month"]'
 
-
 function searchFor(location, checkIn, checkOut, delay = 4500){
-  cy.get(searchWidget).within(()=>{
+  cy.get(searchWidget).within(() => {
     cy.get(locationInput)
     .clear()
     .click()

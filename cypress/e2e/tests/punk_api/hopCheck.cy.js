@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-const getBeers = require('../requests/getBeers')
-const beerAssertions = require('../requests/beerAssertions')
+const getBeers = require('../../requests/getBeers')
+const beerAssertions = require('../../requests/beerAssertions')
 
 context('punk api', () => {
   it('Wyeast 3522 - Belgian Ardennes yeast beer with Tomahawk hop contains 12.5 grams of Magnum hops', () => {
@@ -23,7 +23,7 @@ context('punk api', () => {
       beerAssertions.checkYeast(body, 'American Ale', false)
       beerAssertions.validateBeers(body)
       beerAssertions.checkHopQuantity(body, 'Magnum', 12.5, 'grams')
-      beerAssertions.checkFoodRecommendation(body, 'cheese')
+      beerAssertions.checkFoodRecommendation(body, 'cheese', false)
       beerAssertions.cheeckBrewersTip(body, 'bourbon', false)
     })
   })
