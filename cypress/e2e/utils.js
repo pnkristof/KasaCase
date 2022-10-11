@@ -1,5 +1,21 @@
 const dayjs = require('dayjs')
 
+function arrayContainsString(array, content, exactMatch){
+  for(var i = 0; i < array.length; i++){
+    if(exactMatch){
+      if(array[i] === content){
+        return true
+      }
+    }
+    else{
+      if(array[i].toLowerCase().includes(content.toLowerCase())) {
+        return true
+      }
+    }
+  }
+  return false
+}
+
 function getRandomPastDay(){
   if(isFirstDayOfTheMonth){
     return Math.floor(Math.random() * (dayjs().format('D') - 2)) + 1
@@ -18,6 +34,7 @@ function isFirstDayOfTheMonth(){
 }
 
 module.exports = {
-    getRandomPastDay,
-    isFirstDayOfTheMonth
+  arrayContainsString,
+  getRandomPastDay,
+  isFirstDayOfTheMonth
 };
