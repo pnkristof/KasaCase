@@ -1,0 +1,16 @@
+Bug report
+
+Summary: GET /beers returns error when searching for multiple hops
+
+Environment: production
+Endpoint: /v2/beers
+Affected version: v2
+
+Reproduction steps:
+	1. send GET /v2/beers request with multiple hops in the query, e.g. /v2/beers?hops=Centennial&hops=Amarillo
+
+Actual result
+	The server return status code 500 with error message "Something has gone wrong on our end please try again, if the problem persists email sam.jbmason+punkapi@gmail.com"
+
+Expected result
+	The server returns beers which include both hops
